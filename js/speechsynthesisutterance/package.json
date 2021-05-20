@@ -1,0 +1,52 @@
+{
+  "_from": "speechsynthesisutterance",
+  "_id": "speechsynthesisutterance@1.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-SoJinqiDZeGRGZK2Kvy+NR4iUa+EbXtEOBiekZacRh/lgwHm3kQVlawUVe47oeETKfn6nizyGOsLQKMSwm+q3Q==",
+  "_location": "/speechsynthesisutterance",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "speechsynthesisutterance",
+    "name": "speechsynthesisutterance",
+    "escapedName": "speechsynthesisutterance",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/speechsynthesisutterance/-/speechsynthesisutterance-1.0.2.tgz",
+  "_shasum": "8f45738a72908692fdcdba73576916f08482e38a",
+  "_spec": "speechsynthesisutterance",
+  "_where": "C:\\Users\\bret.steil\\Desktop\\vuesion",
+  "author": {
+    "name": "BrilliantaeroFE"
+  },
+  "bugs": {
+    "url": "https://github.com/BrilliantaeroFE/SpeechSynthesisUtterance/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "voices TTS",
+  "homepage": "https://github.com/BrilliantaeroFE/SpeechSynthesisUtterance#readme",
+  "keywords": [
+    "speechsynthesisutterance",
+    "voices",
+    "tts"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "speechsynthesisutterance",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrilliantaeroFE/SpeechSynthesisUtterance.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.2"
+}
