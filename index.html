@@ -31,17 +31,17 @@
         <!-- Page content-->
         <div id="app" class="container">
             <div class="text-center">
-                <div id="speech" v-if="!complete">
-                    <h1 id="currentWord" class="mt-5"><span @click="speak" class="word">{{currentWord}}</span></h1>
+                <div id="speech" v-if="!complete" v-on:click="speak">
+                    <h1 id="currentWord" class="mt-5"><span class="word">{{currentWord}}</span></h1>
                     <br/>
-                    <button type="button" class="btn btn-primary" disabled>
-                        Words left: <span class="badge badge-light">{{workingList.length - 1}}</span>
+                    <button type="button" class="btn btn-primary">
+                         Words left <span @click="speak" class="badge badge-light">{{workingList.length - 1}}</span>
                     </button>
                 </div>
                 <div v-if="complete" v-on:click="getNext" >
-                    <h1 class="mt-5"><span v-on:click="getNext" class="word">Excellent Job! Click here to start over:</span></h1>
+                    <h1 class="mt-5"><span class="word">Excellent Job Colton! Click here to start over:</span></h1>
                     <br/>
-                    <img src="assets/spiderman.jpg" v-on:click="getNext" alt="Spider Man" width="600" height="600">
+                    <img src="assets/spiderman.jpg" alt="Spider Man" width="600" height="600">
                 </div>
             </div>
         </div>
