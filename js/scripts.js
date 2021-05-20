@@ -12,8 +12,6 @@ var app = new Vue({
     enabled: true,
     currentWord: "",
     workingList: ["again", "and", "be", "both", "come", "could", "does", "for", "from", "get", "good", "have", "her", "here", "his", "home", "isn't", "like", "little", "look", "make", "many", "me", "my", "of", "out", "people", "put", "said", "say", "says", "should", "so", "some", "there", "they", "very", "want", "was", "water", "were", "what", "where", "would", "yes", "your"],
-
-
   },
   methods: {
     speak: function () {
