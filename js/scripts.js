@@ -9,133 +9,35 @@ var app = new Vue({
     el: '#app',
     data: {
       complete: false,
+      enabled: true,
       currentWord: "",
-        wordList: [
-            'and',
-            'me',
-            'get',
-            'here',
-            "isn't",
-            'my',
-            'they',
-            'where',
-            'yes',
-            'come',
-            'have ',
-            'her',
-            'his',
-            'home',
-            'like',
-            'little',
-            'of',
-            'out',
-            'put',
-            'said',
-            'say',
-            'says',
-            'so',
-            'some',
-            'was',
-            'what',
-            'again',
-            'be',
-            'both',
-            'could',
-            'does',
-            'for',
-            'from',
-            'good',
-            'look',
-            'does',
-            'for',
-            'from',
-            'good',
-            'look',
-            'make',
-            'many',
-            'people',
-            'should',
-            'there',
-            'very',
-            'want',
-            'water ',
-            'were',
-            'would',
-            'your',
-        ],
-        workingList: [
-            'and',
-            'me',
-            'get',
-            'here',
-            "isn't",
-            'my',
-            'they',
-            'where',
-            'yes',
-            'come',
-            'have ',
-            'her',
-            'his',
-            'home',
-            'like',
-            'little',
-            'of',
-            'out',
-            'put',
-            'said',
-            'say',
-            'says',
-            'so',
-            'some',
-            'was',
-            'what',
-            'again',
-            'be',
-            'both',
-            'could',
-            'does',
-            'for',
-            'from',
-            'good',
-            'look',
-            'does',
-            'for',
-            'from',
-            'good',
-            'look',
-            'make',
-            'many',
-            'people',
-            'should',
-            'there',
-            'very',
-            'want',
-            'water ',
-            'were',
-            'would',
-            'your',
-        ],
+        wordList: ["again","and","be","both","come","could","does","for","from","get","good","have","her","here","his","home","isn't","like","little","look","make","many","me","my","of","out","people","put","said","say","says","should","so","some","there","they","very","want","was","water","were","what","where","would","yes","your"],
+        workingList: ["again","and","be","both","come","could","does","for","from","get","good","have","her","here","his","home","isn't","like","little","look","make","many","me","my","of","out","people","put","said","say","says","should","so","some","there","they","very","want","was","water","were","what","where","would","yes","your"],
     },
     methods: {
-        speak: function () {
-            let vm = this;
-            let utter = new SpeechSynthesisUtterance();
-            utter.lang = 'en-US';
-            utter.text = vm.currentWord;
-            utter.volume = 0.5;
-            utter.onend = function (e) {
-              vm.remove(vm.currentWord);
-              if(vm.workingList.length == 0){
-                vm.complete = true;
-                vm.currentWord = ""; 
-             } else {
-                vm.getNext();
-             }
-              
-            };
-            window.speechSynthesis.speak(utter);
-          },
+      speak: function () {
+
+        let vm = this;
+        if (vm.enabled) {
+          let utter = new SpeechSynthesisUtterance();
+          vm.enabled = false;
+          utter.lang = 'en-US';
+          utter.text = vm.currentWord;
+          utter.volume = 0.5;
+          utter.onend = function (e) {
+            vm.remove(vm.currentWord);
+            if (vm.workingList.length == 0) {
+              vm.complete = true;
+              vm.currentWord = "";
+            } else {
+              vm.getNext();
+            }
+            vm.enabled = true;
+          };
+
+          window.speechSynthesis.speak(utter);
+        }
+      },
           remove(text) {
             let vm = this;
             let index = this.workingList.indexOf(text);
